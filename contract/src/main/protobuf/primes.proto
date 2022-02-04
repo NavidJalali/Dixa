@@ -1,0 +1,14 @@
+syntax = "proto3";
+package io.navidjalali.primes;
+
+service PrimeGen {
+  rpc GeneratePrimes (PrimeGenPayload) returns (stream PrimeGenResponse) {}
+}
+
+message PrimeGenPayload {
+  int64 upperBound = 1;
+}
+
+message PrimeGenResponse {
+  int64 value = 1;
+}
